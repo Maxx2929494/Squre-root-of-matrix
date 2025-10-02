@@ -1,2 +1,3 @@
 # Squre-root-of-matrix
-OMR project "square root of matrix" 2025
+This codebase containes the code used in the OMR project "square root of matrix" 2025.
+
