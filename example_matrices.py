@@ -5,7 +5,7 @@ Diagonal = np.array([[2,0],[0,2]])
 
 # Pertubation of identityi
 A = lambda n: np.eye(n) + np.outer(np.arange(1, n+1)**2, np.arange(n)**2)
-I_per = A(25)
+I_per = A(10)
 
 # Wilson's matrix
 Wilson_matrix = np.array([[10, 7, 8, 7], [7, 5, 6, 5], [8, 6, 10, 9], [7, 5, 9, 10]])

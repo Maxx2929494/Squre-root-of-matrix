@@ -27,7 +27,7 @@ def newton_method(A, max_k: int, tol: float):
 
 
 # Method 2: commutating Newton's method
-def commutating_newton(A, max_k: int, tol: float):
+def DB(A, max_k: int, tol: float):
     # Dimension + initialize Y 
     n = A.shape[0]
     Y = A.copy()

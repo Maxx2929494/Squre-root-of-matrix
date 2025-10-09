@@ -3,7 +3,7 @@ from numerical_methods import *
 from example_matrices import *
 
 # Initialize methods
-methods = [newton_method, commutating_newton, iannazoo, sqrtm]
+methods = [newton_method, DB, iannazoo, sqrtm]
 
 
 # Intialize matrices
@@ -19,7 +19,7 @@ matrices = {
 }
 
 # time test of all methods and all matrices
-k = 10
+k = 100
 tol = 10**(-20)
 repeat = 10
 
