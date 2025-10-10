@@ -33,7 +33,7 @@ Singular = np.array([[2, 1, 0, 0],
               [0, 1, 2, 1],
               [0, 0, 0, 0]])
 
-# Hermitian matrix of dimension 2**8 = 256
+# Hermitian matrix of dimension 2**13 = 16384
 n = 2**8
 X = np.random.randn(n, n) + 1j * np.random.randn(n, n)
 Hermitian = 0.5 * (X + X.conj().T)

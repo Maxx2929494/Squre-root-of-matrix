@@ -27,7 +27,7 @@ def newton_method(A, max_k: int, tol: float):
 
 
 # Method 2: commutating Newton's method
-def DB(A, max_k: int, tol: float):
+def commutating(A, max_k: int, tol: float):
     # Dimension + initialize Y 
     n = A.shape[0]
     Y = A.copy()
@@ -45,7 +45,28 @@ def DB(A, max_k: int, tol: float):
 
     return Y
 
-# Method 3: Iannazzo's iteration
+# method 3: Denman-Beavers
+def DB(A, max_k: int, tol: float):
+    # Dimension + initialize X_0 and Y_0
+    n = A.shape[0]
+    X = A.copy()
+    Y = np.eye(n)
+
+    # Iteration step
+    for k in range(max_k):
+        X_k = 0.5 * (X + inv(Y) )
+        Y_k = 0.5 * (Y + inv(X) )
+
+        #convergence check
+        if max(norm(X_k - X, 'fro'), norm(Y_k - Y, 'fro')) < tol:
+            return X_k
+
+        X,Y = X_k, Y_k
+
+
+    return X
+
+# Method 4: Iannazzo's iteration
 def iannazoo(A, max_k: int, tol: float):
     # Dimension + initialize X and E
     n = A.shape[0]
@@ -66,5 +87,5 @@ def iannazoo(A, max_k: int, tol: float):
     return X
 
 
-# Method 4: Schur's method implented by Scipy
+# Method 5: Schur's method implented by Scipy
 schur_method = sqrtm

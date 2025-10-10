@@ -1,0 +1,3 @@
+Schrijf eigen schur_method die een stuk slomer is (geen paraleliztatie)
+
+Waarom is de scipy schur method zoveel meer convergent?
