@@ -2,7 +2,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle
 from matplotlib import gridspec
-import warnings
 
 """
 
@@ -145,3 +144,4 @@ if __name__ == "__main__":
     example_eigs = np.array([4.0, 1.0+0.5j, 0.25, 0.9-0.2j])
     fig, ax, H, stable_flag = plot_stability_circles(example_eigs, save_path=None)
     plt.show()
+
