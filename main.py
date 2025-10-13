@@ -23,12 +23,19 @@ k = 100
 tol = 10**(-20)
 repeat = 10
 
+
 if __name__ == "__main__":
     for name, matrix in matrices.items():
-        for method in methods:
-            print(f"---Results for matrix {name}---") 
-            if method == sqrtm:
-                benchmark(matrix, method, repeat) 
+        print(f"---Results for matrix {name}---")
+        benchmark(matrix, DB, repeat, k, tol)
 
-            else:
-                benchmark(matrix, method, repeat, k, tol)
+
+#if __name__ == "__main__":
+#    for name, matrix in matrices.items():
+#        for method in methods:
+#            print(f"---Results for matrix {name}---") 
+#            if method == sqrtm:
+#                benchmark(matrix, method, repeat) 
+#
+#            else:
+#                benchmark(matrix, method, repeat, k, tol)
