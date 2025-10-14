@@ -67,24 +67,37 @@ def DB(A, max_k: int, tol: float):
     return X
 
 # Method 4: Iannazzo's iteration
-def iannazoo(A, max_k: int, tol: float):
+def iannazoo(A, max_k: int, tol: float, plot=False):
     # Dimension + initialize X and E
     n = A.shape[0]
     X = A.copy()
     E = 0.5 * ( np.identity(n) - A )
 
-    #iteration step
-    for k in range(max_k):
-        X_k = X + E 
-        E_k = -0.5 * E @ inv(X_k) @ E
+    #iteration step if not plotting
+    if plot==False:
+        for k in range(max_k):
+            X_k = X + E 
+            E_k = -0.5 * E @ inv(X_k) @ E
 
-        # Convergence check
-        if norm(E, 'fro') < tol:
-            return X_k
-        
-        X,E = X_k,E_k
+            # Convergence check
+            if norm(E, 'fro') < tol:
+                return X_k
+            
+            X,E = X_k,E_k
 
-    return X
+        return X
+    
+    # Iteration step when plotting
+    if plot == True:
+        err_list = [0 for k in range(max_k)]
+        for k in range(max_k):
+            X_k = X + E 
+            E_k = -0.5 * E @ inv(X_k) @ E
+            X,E = X_k,E_k
+
+            err_list[k] = norm(A-X@X,'fro')
+        return err_list
+
 
 
 # Method 5: Schur's method implented by Scipy
