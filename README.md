@@ -6,7 +6,7 @@ This codebase containes the code used in the OMR project "square root of matrix"
 
 ## Dependencies
 
-This project relies on several Python libraries for data handling, visualization, and clustering. Make sure the following packages are installed:
+This project relies on several Python libraries for data handling and visualization. Make sure the following packages are installed:
 
 - `numpy`
 - `scipy`
