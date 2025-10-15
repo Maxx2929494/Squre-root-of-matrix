@@ -142,6 +142,6 @@ def plot_stability_circles(eigvals,figsize=(11,6),dpi=300,save_path=None,show_in
 
 
 if __name__ == "__main__":
-    example_eigs = np.array([4.0, 1.0+0.5j, 0.25, 0.9-0.2j])
-    fig, ax, H, stable_flag = plot_stability_circles(example_eigs, save_path=None)
-    plt.show()
+    eigvalues = np.random.uniform(-1, 1, 10) + 1.j * np.random.uniform(-1, 1,10)
+    plot_stability_circles(eigvalues)
+
